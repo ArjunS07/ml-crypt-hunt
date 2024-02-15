@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Leaderboard | TSRS Crypt Hunt {% endblock %}
+
+{% block content %}
+<main class="flex flex-col items-center justify-center min-h-[calc(100vh-128px)] px-3 py-4 md:px-20 lg:px-32 xl:px-40">
+    <div class="w-full flex items-center justify-center bg-white ml-[0.125em] mr-[0.375em] box-primary lg:mx-0">
+        <table class="w-full h-full text-sm text-center text-black md:text-base lg:text-lg xl:text-xl ">
+            <thead class="">
+                <tr class="">
+                    <th scope="col"
+                        class="py-4 pl-4 pr-1 border-b border-black md:pl-12 lg:pl-16 md:pr-4 lg:pr-8 md:py-6 lg:py-8 ">
+                    </th>
+                    <th scope="col"
+                        class="px-1 py-4 border-b border-black font-regular md:font-bold md:px-4 lg:px-8 md:py-6 lg:py-8 ">
+                        Current level</th>
+                    <th scope="col"
+                        class="px-1 py-4 border-b border-black font-regular md:font-bold md:px-4 lg:px-8 md:py-6 lg:py-8 ">
+                        Points
+                    </th>
+                    <th scope="col"
+                        class="py-4 pl-1 pr-6 border-b border-black font-regular tr-lg md:font-bold md:pr-12 lg:pr-16 md:py-6 lg:py-8 ">
+                        Level up time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in teams %}
+                {% if forloop.counter < teams|length %} <tr class="border-b border-black ">
+                    {% else %}
+                    <tr class="">
+                        {% endif %}
+
+                        <td class="py-4 pl-4 border-black md:pl-12 lg:pl-16 md:pr-4 lg:pr-8 md:py-6 lg:py-8">
+                            <div class="flex flex-row items-center gap-4 lg:gap-12">
+                                <div
+                                    class="border-black border-2 h-8 w-8 md:h-12 md:w-12 lg:h-16 lg:w-16 full font-bold house-box text-base md:text-lg items-center justify-center flex bg-{{ team.color }}-house-light dark:bg-{{ team.color }}-house-dark ">
+                                    <span class="text-black">
+                                        {{ forloop.counter}}
+                                    </span>
+                                </div>
+                                <span class="font-medium">{{ team.username }} </span>
+                            </div>
+                        </td>
+
+                        <td class="py-4 border-black md:py-6 lg:py-8">
+                            {% if team.has_completed %}
+                            <b> (Completed) </b>
+                            {% else %}
+                            {{ team.current_question.serial_num }}
+                            {% endif %}
+                        </td>
+                        <td class="py-4 border-black md:py-6 lg:py-8">{{ team.total_points }}</td>
+                        <td
+                            class="py-4 pl-1 pr-6 text-center border-black md:pl-4 lg:pl-8 md:pr-12 lg:pr-16 md:py-6 lg:py-8">
+
+                            {% if team.levelup_time %}
+                            {{ team.formatted_levelup_time }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    {% if 'any_on_0' %}
+    <p class="w-full mt-8 text-base text-left text-gray-500">Note: Houses at 0 points are randomly ordered.</p>
+    {% endif %}
+
+</main>
+
+{% endblock content %}

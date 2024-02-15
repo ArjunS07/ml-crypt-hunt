@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Banned | TSRS Crypt Hunt {% endblock title %}
+
+{% block content %}
+
+<main class="items-center px-12 py-24 overflow-x-hidden prose">
+
+    You are currently banned from participating in the Crypt Hunt. This is likely because you have violated the event <a
+        href="{% url 'about' %}">rules</a>. Please check your house WhatsApp group or for more information.
+</main>
+
+{% endblock %}

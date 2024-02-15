@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Complete | TSRS Crypt Hunt {% endblock title %}
+
+{% block content %}
+<style>
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    .animate-spin-slow {
+        animation: spin 2s linear infinite;
+    }
+
+</style>
+<main
+    class="justify-between flex flex-col px-12 overflow-x-hidden [height:calc(100vh-80px)] md:[height:calc(100vh-128px)] py-24 items-center">
+
+    <div class="flex items-center justfy-center flex-grow text-[12em]">
+            <img class="w-48 animate-spin-slow" src="{% static 'assets/smiley-circle-bg.png' %}" alt="">
+
+
+    </div>
+
+    <div class="text-center ">
+        <div class="mb-20">
+            <h1
+                class="mb-3 text-3xl font-black tracking-wider uppercase md:text-5xl lg:text-6xl text-violet-800 dark:text-violet-300">
+                Thank you for playing!<h1>
+                    <sub class="text-lg text-black md:text-2xl dark:text-white">The Crypt Hunt is now over.</sub>
+        </div>
+
+        <div class="md:text-lg">
+            The OC will soon announce the overall results and player awards. Until then, check out the <a
+                href="{% url 'leaderboard' %}" class="font-medium text-violet-800"> leaderboard</a> to see the final
+            standings.
+        </div>
+
+    </div>
+
+
+
+</main>
+{% endblock %}

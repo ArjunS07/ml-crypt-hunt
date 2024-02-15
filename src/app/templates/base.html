@@ -1,0 +1,78 @@
+<html lang="en" style="overflow-x: hidden">
+{% load tailwind_tags %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %}</title>
+    {% tailwind_css %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}">
+    {% block head_imports %} {% endblock head_imports %}
+</head>
+
+<body class="overflow-x-hidden bg-secondary-light dark:bg-secondary-dark">
+
+    <nav>
+        <div id="nav"
+            class="flex flex-wrap items-center justify-between px-6 py-4 md:py-8 md:bg-transparent md:px-12 lg:px-20 xl:px-32">
+            <a href="{% url 'index' %}">
+                <div class="flex flex-row items-center justify-start gap-2 text-gray-800 md:gap-4 dark:text-gray-100">
+                    <img class="h-10 md:h-12" src="{% static 'assets/logo.png' %}" alt="">
+                    <h3 class="text-lg font-semibold md:text-2xl">Crypt Hunt 2023</h3>
+                </div>
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center px-1 text-sm text-gray-500 lg md:hidden focus:outline-none focus:ring-2 0 dark:text-gray-400 focus:ring-transparent"
+                aria-controls="navbar-default" aria-expanded="false" id="nav-toggle">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div id="nav-items-container"
+                class="z-50  flex-row top-[80px] items-center hidden w-screen px-8 pt-8 pb-4 -mx-8 md:static bg-zinc-50 dark:bg-zinc-900 md:py-0 md:px-0 md:mx-0 md:w-auto md:mt-0 md:block md:bg-transparent md:dark:bg-transparent">
+                <div class="flex flex-col gap-10 text-lg text-black uppercase md:flex-row dark:text-gray-200">
+
+                    <a href="{% url 'about' %}">About</a>
+                    <a href="{% url 'leaderboard' %}">Leaderboard</a>
+
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-log-out">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                    </a>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+
+    {% block content %}
+    {% endblock content %}
+
+</body>
+
+{% block js_imports %}
+{% endblock js_imports %}
+<script src="{% static 'js/nav.js' %}"></script>
+
+
+</html>

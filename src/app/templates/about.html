@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} About the event | TSRS Crypt Hunt {% endblock title %}
+
+{% block content %}
+
+<main class="px-2 py-4 overflow-x-hidden md:px-12 lg:px-20 xl:px-32">
+  <div class="flex flex-col pb-12 pl-4 pr-6 gap-9">
+    <div class="px-4 py-6 space-y-3 leading-loose md:px-8 box-primary">
+      <div class="text-black">
+        <h1 class="mb-3 text-2xl font-semibold text-primary-light">
+          About the event
+        </h1>
+        <div class="space-y-2">
+          <p>
+            <b>The Crypt Hunt </b> is a collaborative inter-house event, in which
+            you and the rest of your house work together to solve a series of
+            cryptic riddles.
+          </p>
+          <p>
+            In the <b>online phases</b> of the event, questions will give you
+            clues that send you on virtual scavenger hunts all over the internet.
+          </p>
+          <p>
+            In the <b>offline phase</b>, you'll start with a question on the site, which will lead you to clues and
+            unexpected challenges all over the school grounds.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 py-6 space-y-4 leading-loose md:px-8 box-primary">
+      <div class="text-black">
+        <h1 class="mb-2 text-2xl font-semibold text-primary-light">Rules</h1>
+        <div class="space-y-4">
+          <div class="">
+            <b>General</b>
+            <ol class="px-8 list-decimal">
+              <li>
+                If a participant is found breaking any of the below rules, they or their
+                entire house may be temporarily or permanently banned from the
+                event.
+              </li>
+              <li>
+                All students from grades 6-12 are allowed to participate
+              </li>
+              <li>
+                One individual entering the correct answer for a level will take the entire house to the next level.
+              </li>
+              <li>
+                Participants are forbidden from discussing anything relating to
+                questions or their house's progress in the event with anyone outside their house.
+              </li>
+              <li>
+                Any attempt to obtain unauthorised access to information regarding questions or answers is strictly
+                forbidden.
+              </li>
+              <li>
+                Services and websites used to host files are not clues. Filenames, unless explicitly mentioned in
+                questions, are not
+                clues either.
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <b>Online</b>
+            <ol class="px-8 list-decimal">
+              <li>
+                All discussions relating to the Crypt Hunt, both text or voice, must happen over platforms with at least
+                one organising committee member present at all times.
+              </li>
+              <li>
+                Hints will be given equally to houses. The timing and nature of
+                the hints, as well as the requirements to procure hints, will be
+                at the discretion of the organising committee.
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <b>Offline</b>
+            <ol class="px-8 list-decimal">
+              <li>
+                Participation in the offline event requires official registration.
+              </li>
+              <li>
+                Participants are only allowed to bring laptops to participate.
+                Phones, tablets, headphones, and other devices will be
+                confiscated.
+              </li>
+              <li>
+                Participants must not touch physical hardware or damage physical clues, unless they are
+                explicitly prompted by the question or organising committee members to do so.
+              </li>
+              <li>Houses will be given four questions at the beginning of the offline phase on the website. Houses are
+                allowed to do the questions in any order they wish. </li>
+              <li>Houses are only allowed to solve one question at a time. They are not allowed to split into smaller
+                groups. </li>
+              <li>Answers must be given verbally to the OC member assigned to each house. </li>
+              <li>Scoring:
+                <ul class="ml-6 list-decimal">
+                  <li>One point will be awarded for each question successfully solved.</li>
+                  <li>One bonus point will be awarded after a house solves a third question </li>
+                  <li>Two bonus points will be awarded after a house solves all four questions. </li>
+                </ul>
+              </li>
+
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 px-4 py-6 md:px-8 lg:col-span-6 box-primary">
+        <div class="space-y-3 leading-loose text-black">
+          <h1 class="text-2xl font-semibold text-primary-light">Scoring</h1>
+          <p>
+            <b>Offline</b> questions are worth one point each. Bonus points will be awarded as explained above.
+            <b>Online</b> questions are worth one point each. The final standings
+            will be based on cumulative points across phases.
+          </p>
+          <p>
+            Ties will be broken based on the number of points scored in offline
+            questions, and, if necessary, by the average time taken by each house per attempted offline question.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-span-12 px-4 py-6 md:px-8 e lg:col-span-6 box-primary">
+        <div class="space-y-3 leading-loose text-black">
+          <h1 class="text-2xl font-semibold text-primary-light">Schedule</h1>
+          <!-- <table class="mb-6 text-left text-black border-separate border-spacing-0">
+            <thead class="">
+              <tr class="">
+                <th scope="col" class="px-3 py-3 border-t border-b border-l border-r border-black tl-lg md:px-5">
+                  Day
+                </th>
+                <th scope="col" class="px-3 py-3 border-t border-b border-r border-black md:px-5">
+                  Timings
+                </th>
+                <th scope="col" class="px-3 py-3 border-t border-b border-r border-black tr-lg md:px-5">
+                  Mode
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border border-l border-r border-black">
+                <td class="px-3 py-3 border-l border-r border-black md:px-5">
+                  Friday, 12th May
+                </td>
+                <td class="px-3 py-3 border-r border-black md:px-5">
+                  17:00 - 23:30
+                </td>
+                <td class="px-3 py-3 border-r border-black md:px-5">Online</td>
+              </tr>
+              <tr class="px-8">
+                <td class="px-3 py-3 border-l border-r border-black md:px-5">
+                  Saturday, 13th May
+                </td>
+                <td class="px-3 py-3 border-r border-black md:px-5">
+                  9:30 - 23:30
+                </td>
+                <td class="px-3 py-3 border-r border-black md:px-5">Online</td>
+              </tr>
+              <tr class="">
+                <td class="px-3 py-3 border-l border-r border-black md:px-5">
+                  Sunday, 14th May
+                </td>
+                <td class="px-3 py-3 border-r border-black md:px-5">
+                  9:30 - 23:30
+                </td>
+                <td class="px-3 py-3 border-r border-black md:px-5">
+                  Online
+                </td>
+              </tr>
+              <tr class="">
+                <td class="px-3 py-3 border-b border-l border-r border-black md:px-5">
+                  Monday, 15th May
+                </td>
+                <td class="px-3 py-3 border-b border-r border-black md:px-5">
+                  9:30 - 11:30
+                </td>
+                <td class="px-3 py-3 border-b border-r border-black md:px-5">
+                  Offline
+                </td>
+              </tr>
+            </tbody>
+          </table> -->
+          <p>
+          <h4 class="font-semibold">Online</h4>
+          The online phase will begin at 5:00 PM on Friday, May 19th, and will conclude at 11:30 PM on Sunday, May 21st.
+          </p>
+          <p>
+          <h4 class="mb-2 font-semibold">Offline</h4>
+          The offline phase will take place during school hours on May 24th. The specific timings will be announced at a
+          later date.
+          </p>
+          <p>
+            Progress in the online and offline phases will be completely independent of each other.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="px-4">The logo for the Crypt Hunt was designed by Pritika Kaur. This site was developed by Arjun Sharma and
+    Ritwic Verma. </p>
+</main>
+{% endblock %}

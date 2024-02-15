@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+Werkzeug = "==1.0.1"
+black = "*"
+
+[packages]
+dj-database-url = "*"
+django = "*"
+gunicorn = "*"
+whitenoise = "*"
+psycopg2-binary = "*"
+django-debug-toolbar = "*"
+django-extensions = "*"
+django-browser-reload = "*"
+django-ckeditor = "*"
+djangorestframework = "*"
+markdown = "*"
+django-tailwind = "*"
+django-heroku = "*"
+python-dotenv = "*"
+django-cors-headers = "*"
+black = "*"
+sentry-sdk = "*"
+requests = "*"
+
+[pipenv]
+allow_prereleases = true

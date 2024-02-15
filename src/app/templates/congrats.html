@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Event complete | TSRS Crypt Hunt {% endblock title %}
+
+{% block content %}
+<style>
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    .animate-spin-slow {
+        animation: spin 2s linear infinite;
+    }
+
+</style>
+<main
+    class="justify-between flex flex-col px-12 overflow-x-hidden [height:calc(100vh-80px)] md:[height:calc(100vh-128px)] py-24 items-center">
+
+    <div class="flex items-center justfy-center flex-grow text-[12em]">
+            <img class="w-48 animate-spin-slow" src="{% static 'assets/smiley-circle-bg.png' %}" alt="">
+
+
+    </div>
+
+    <div class="text-center ">
+        <div class="mb-20">
+            <h1
+                class="mb-3 text-3xl font-black tracking-widest uppercase md:text-5xl lg:text-6xl text-violet-800 dark:text-violet-300">
+                Congratulations!<h1>
+                    <sub class="text-lg text-black md:text-2xl dark:text-white">Your house has finished this phase of
+                        the 2023
+                        Inter-House Crypt Hunt</sub>
+        </div>
+
+        <div class="text-black md:text-lg dark:text-white">
+            Check out the <a href="{% url 'leaderboard' %}" class="font-medium text-violet-800 dark:text-violet-300">
+                leaderboard</a> to see how other houses are doing
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

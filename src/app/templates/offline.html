@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} Play | TSRS Crypt Hunt {% endblock %}
+
+{% block content %}
+
+<style>
+    .prose img {
+        width: 50% !important;
+        height: auto !important;
+    }
+</style>
+
+<main
+    class="[min-height:calc(100vh-80px)] md:[min-height:calc(100vh-128px)] px-6 md:px-12 lg:px-20 xl:px-32 py-4 md:py-12 flex flex-col">
+
+    <em class="mb-5 text-center">You are allowed to do the offline questions in whatever order you choose</em>
+    <div class="flex flex-col flex-grow">
+        {% for question in questions %}
+        <div class="px-4 py-6 space-y-3 leading-loose text-black md:px-8 box-primary">
+            <strong class="text-xl text-primary-light">Question {{ forloop.counter }} </strong>
+            <div class="prose prose-lg text-black [word-wrap:break-word] dark:text-white">
+                {{ question.contents | safe }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <div class="text-lg font-medium text-gray-800 capitalize">
+        <p>Offline mode</p>
+        <p>{{ player.school_user_id }} </p>
+        <p> {{ player.team.account.username }} </p>
+    </div>
+
+</main>
+
+
+{% endblock content %}
